@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA5B3D4B2DEB0A56001BAFE8 /* AWSS3 in Frameworks */ = {isa = PBXBuildFile; productRef = AA5B3D4A2DEB0A56001BAFE8 /* AWSS3 */; };
+		AA5B3D9D2DECA53A001BAFE8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AA5B3D9C2DECA535001BAFE8 /* .gitignore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA5B3CDC2DEA277E001BAFE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA5B3CBD2DEA277C001BAFE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA5B3CC42DEA277C001BAFE8;
+			remoteInfo = InsideMapsNikolaJocic;
+		};
+		AA5B3CE62DEA277E001BAFE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA5B3CBD2DEA277C001BAFE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA5B3CC42DEA277C001BAFE8;
+			remoteInfo = InsideMapsNikolaJocic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA5B3CC52DEA277C001BAFE8 /* InsideMapsNikolaJocic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsideMapsNikolaJocic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5B3CDB2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsideMapsNikolaJocicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5B3CE52DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsideMapsNikolaJocicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5B3D9C2DECA535001BAFE8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA5B3CED2DEA277E001BAFE8 /* Exceptions for "InsideMapsNikolaJocic" folder in "InsideMapsNikolaJocic" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AA5B3CC42DEA277C001BAFE8 /* InsideMapsNikolaJocic */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AA5B3CC72DEA277C001BAFE8 /* InsideMapsNikolaJocic */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA5B3CED2DEA277E001BAFE8 /* Exceptions for "InsideMapsNikolaJocic" folder in "InsideMapsNikolaJocic" target */,
+			);
+			path = InsideMapsNikolaJocic;
+			sourceTree = "<group>";
+		};
+		AA5B3CDE2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InsideMapsNikolaJocicTests;
+			sourceTree = "<group>";
+		};
+		AA5B3CE82DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InsideMapsNikolaJocicUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA5B3CC22DEA277C001BAFE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5B3D4B2DEB0A56001BAFE8 /* AWSS3 in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5B3CD82DEA277E001BAFE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5B3CE22DEA277E001BAFE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA5B3CBC2DEA277C001BAFE8 = {
+			isa = PBXGroup;
+			children = (
+				AA5B3D9C2DECA535001BAFE8 /* .gitignore */,
+				AA5B3CC72DEA277C001BAFE8 /* InsideMapsNikolaJocic */,
+				AA5B3CDE2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests */,
+				AA5B3CE82DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests */,
+				AA5B3CC62DEA277C001BAFE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA5B3CC62DEA277C001BAFE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B3CC52DEA277C001BAFE8 /* InsideMapsNikolaJocic.app */,
+				AA5B3CDB2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests.xctest */,
+				AA5B3CE52DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA5B3CC42DEA277C001BAFE8 /* InsideMapsNikolaJocic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA5B3CEE2DEA277E001BAFE8 /* Build configuration list for PBXNativeTarget "InsideMapsNikolaJocic" */;
+			buildPhases = (
+				AA5B3CC12DEA277C001BAFE8 /* Sources */,
+				AA5B3CC22DEA277C001BAFE8 /* Frameworks */,
+				AA5B3CC32DEA277C001BAFE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AA5B3CC72DEA277C001BAFE8 /* InsideMapsNikolaJocic */,
+			);
+			name = InsideMapsNikolaJocic;
+			packageProductDependencies = (
+				AA5B3D4A2DEB0A56001BAFE8 /* AWSS3 */,
+			);
+			productName = InsideMapsNikolaJocic;
+			productReference = AA5B3CC52DEA277C001BAFE8 /* InsideMapsNikolaJocic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA5B3CDA2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA5B3CF32DEA277E001BAFE8 /* Build configuration list for PBXNativeTarget "InsideMapsNikolaJocicTests" */;
+			buildPhases = (
+				AA5B3CD72DEA277E001BAFE8 /* Sources */,
+				AA5B3CD82DEA277E001BAFE8 /* Frameworks */,
+				AA5B3CD92DEA277E001BAFE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA5B3CDD2DEA277E001BAFE8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA5B3CDE2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests */,
+			);
+			name = InsideMapsNikolaJocicTests;
+			packageProductDependencies = (
+			);
+			productName = InsideMapsNikolaJocicTests;
+			productReference = AA5B3CDB2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA5B3CE42DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA5B3CF62DEA277E001BAFE8 /* Build configuration list for PBXNativeTarget "InsideMapsNikolaJocicUITests" */;
+			buildPhases = (
+				AA5B3CE12DEA277E001BAFE8 /* Sources */,
+				AA5B3CE22DEA277E001BAFE8 /* Frameworks */,
+				AA5B3CE32DEA277E001BAFE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA5B3CE72DEA277E001BAFE8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA5B3CE82DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests */,
+			);
+			name = InsideMapsNikolaJocicUITests;
+			packageProductDependencies = (
+			);
+			productName = InsideMapsNikolaJocicUITests;
+			productReference = AA5B3CE52DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA5B3CBD2DEA277C001BAFE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					AA5B3CC42DEA277C001BAFE8 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					AA5B3CDA2DEA277E001BAFE8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = AA5B3CC42DEA277C001BAFE8;
+					};
+					AA5B3CE42DEA277E001BAFE8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = AA5B3CC42DEA277C001BAFE8;
+					};
+				};
+			};
+			buildConfigurationList = AA5B3CC02DEA277C001BAFE8 /* Build configuration list for PBXProject "InsideMapsNikolaJocic" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA5B3CBC2DEA277C001BAFE8;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AA5B3D492DEB0A56001BAFE8 /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AA5B3CC62DEA277C001BAFE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA5B3CC42DEA277C001BAFE8 /* InsideMapsNikolaJocic */,
+				AA5B3CDA2DEA277E001BAFE8 /* InsideMapsNikolaJocicTests */,
+				AA5B3CE42DEA277E001BAFE8 /* InsideMapsNikolaJocicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA5B3CC32DEA277C001BAFE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5B3D9D2DECA53A001BAFE8 /* .gitignore in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5B3CD92DEA277E001BAFE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5B3CE32DEA277E001BAFE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA5B3CC12DEA277C001BAFE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5B3CD72DEA277E001BAFE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5B3CE12DEA277E001BAFE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA5B3CDD2DEA277E001BAFE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA5B3CC42DEA277C001BAFE8 /* InsideMapsNikolaJocic */;
+			targetProxy = AA5B3CDC2DEA277E001BAFE8 /* PBXContainerItemProxy */;
+		};
+		AA5B3CE72DEA277E001BAFE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA5B3CC42DEA277C001BAFE8 /* InsideMapsNikolaJocic */;
+			targetProxy = AA5B3CE62DEA277E001BAFE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA5B3CEF2DEA277E001BAFE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UDW7CU4GNU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InsideMapsNikolaJocic/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.nikolajocic.InsideMapsNikolaJocic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA5B3CF02DEA277E001BAFE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UDW7CU4GNU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InsideMapsNikolaJocic/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.nikolajocic.InsideMapsNikolaJocic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA5B3CF12DEA277E001BAFE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AA5B3CC72DEA277C001BAFE8 /* InsideMapsNikolaJocic */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA5B3CF22DEA277E001BAFE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AA5B3CC72DEA277C001BAFE8 /* InsideMapsNikolaJocic */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA5B3CF42DEA277E001BAFE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UDW7CU4GNU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.nikolajocic.InsideMapsNikolaJocicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InsideMapsNikolaJocic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InsideMapsNikolaJocic";
+			};
+			name = Debug;
+		};
+		AA5B3CF52DEA277E001BAFE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UDW7CU4GNU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.nikolajocic.InsideMapsNikolaJocicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InsideMapsNikolaJocic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InsideMapsNikolaJocic";
+			};
+			name = Release;
+		};
+		AA5B3CF72DEA277E001BAFE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UDW7CU4GNU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.nikolajocic.InsideMapsNikolaJocicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InsideMapsNikolaJocic;
+			};
+			name = Debug;
+		};
+		AA5B3CF82DEA277E001BAFE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UDW7CU4GNU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = online.nikolajocic.InsideMapsNikolaJocicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InsideMapsNikolaJocic;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA5B3CC02DEA277C001BAFE8 /* Build configuration list for PBXProject "InsideMapsNikolaJocic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5B3CF12DEA277E001BAFE8 /* Debug */,
+				AA5B3CF22DEA277E001BAFE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA5B3CEE2DEA277E001BAFE8 /* Build configuration list for PBXNativeTarget "InsideMapsNikolaJocic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5B3CEF2DEA277E001BAFE8 /* Debug */,
+				AA5B3CF02DEA277E001BAFE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA5B3CF32DEA277E001BAFE8 /* Build configuration list for PBXNativeTarget "InsideMapsNikolaJocicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5B3CF42DEA277E001BAFE8 /* Debug */,
+				AA5B3CF52DEA277E001BAFE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA5B3CF62DEA277E001BAFE8 /* Build configuration list for PBXNativeTarget "InsideMapsNikolaJocicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5B3CF72DEA277E001BAFE8 /* Debug */,
+				AA5B3CF82DEA277E001BAFE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA5B3D492DEB0A56001BAFE8 /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/aws-sdk-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.40.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA5B3D4A2DEB0A56001BAFE8 /* AWSS3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA5B3D492DEB0A56001BAFE8 /* XCRemoteSwiftPackageReference "aws-sdk-ios-spm" */;
+			productName = AWSS3;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AA5B3CBD2DEA277C001BAFE8 /* Project object */;
+}
