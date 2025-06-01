@@ -10,7 +10,7 @@ import UIKit
 /// Custom UICollectionViewCell that displays an image, either from cache or fetched from a URL.
 final class GalleryImageCell: UICollectionViewCell {
     private let imageView = UIImageView()
-    private let fallbackImage = UIImage(named: "logo-text")?.withRenderingMode(.alwaysTemplate)
+    private let fallbackImage = UIImage(named: "logo-text")
     private var currentURL: URL?
     
     override init(frame: CGRect) {

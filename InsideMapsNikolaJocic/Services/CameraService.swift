@@ -14,6 +14,8 @@ final class CameraService {
     private let photoOutput = AVCapturePhotoOutput()
     private var input: AVCaptureDeviceInput?
     private var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    var flashMode: AVCaptureDevice.FlashMode = .off
 
     func configureSession() {
         session.beginConfiguration()
@@ -82,6 +84,7 @@ final class CameraService {
         )
 
         settings.isLensStabilizationEnabled = photoOutput.isLensStabilizationDuringBracketedCaptureSupported
+        settings.flashMode = flashMode
         photoOutput.capturePhoto(with: settings, delegate: delegate)
     }
 }

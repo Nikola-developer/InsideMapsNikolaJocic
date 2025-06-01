@@ -12,6 +12,9 @@ import UIKit
 class ImagePreviewViewController: UIViewController {
     private let s3Service = S3Service()
     private let images: [UIImage]
+    private var hasErrors = false
+    private var hasShownAlert = false
+
     
     init(images: [UIImage]) {
         self.images = images
@@ -160,13 +163,13 @@ class ImagePreviewViewController: UIViewController {
                     case .success():
                         try? fileManager.removeItem(at: fileURL)
                     case .failure(let error):
-                        print("AWS upload error: \(error)")
+                        self.showErrorAlert(error: "AWS upload error: \(error)")
                     }
                     dispatchGroup.leave()
                 }
                 
             } catch {
-                print("Error writing file: \(error)")
+                self.showErrorAlert(error: "Error writing file: \(error)")
             }
         }
         
@@ -185,17 +188,18 @@ class ImagePreviewViewController: UIViewController {
                 case .success():
                     try? fileManager.removeItem(at: logURL)
                 case .failure(let error):
-                    print("Log upload error: \(error)")
+                    self.showErrorAlert(error: "Log upload error: \(error)")
                 }
                 dispatchGroup.leave()
             }
         } catch {
-            print("Failed to write log file: \(error)")
+            self.showErrorAlert(error: "Failed to write log file: \(error)")
         }
         
-            
+        
         dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
             guard let self = self else { return }
+            if(hasErrors) { return }
             
             self.uploadingLabel.isHidden = true
             self.loadingIndicator.stopAnimating()
@@ -206,9 +210,27 @@ class ImagePreviewViewController: UIViewController {
         }
     }
     
-    
     @objc private func handleDismiss() {
         onDismiss?()
         dismiss(animated: true)
+    }
+    
+    @objc private func showErrorAlert(error: String) {
+        DispatchQueue.main.async {
+            guard !self.hasShownAlert else { return }
+            self.hasShownAlert = true
+            self.hasErrors = true
+            self.loadingIndicator.stopAnimating()
+            self.uploadingLabel.isHidden = true
+
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                self.onDismiss?()
+                self.dismiss(animated: true)
+                self.hasShownAlert = false
+            })
+
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

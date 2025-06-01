@@ -73,6 +73,18 @@ else {
 
 ----------
 
+## Offline functionality
+
+Added offline capability to `S3Service`.
+
+-   If the user does not have an internet connection at the time of the upload, the files are automatically saved locally in the PendingUploads directory.
+    
+-   On application launch, the S3Service checks for files that have not been uploaded and tries to send them to S3 again.
+
+- This functionality allows the user to use the application smoothly even when there is no Internet.
+
+----------
+
 ## Future Improvements
 
 -   Add error feedback to user using  `UIAlertController`

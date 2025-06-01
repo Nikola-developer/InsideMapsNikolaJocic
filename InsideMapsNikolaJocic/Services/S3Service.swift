@@ -7,6 +7,7 @@
 
 import Foundation
 import AWSS3
+import Network
 
 /// Handles all AWS S3 interactions:
 /// configuring AWS
@@ -62,6 +63,28 @@ final class S3Service {
     /// Uploads file s3
     /// Used by "uploadImage" and "uploadLog"
     private func upload(fileURL: URL, folderName: String, fileName: String, contentType: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        checkInternetConnection { isConnected in
+            if !isConnected {
+                print("No internet connection. Saving file for retry...")
+
+                self.saveFileForRetry(fileURL: fileURL, folderName: folderName, fileName: fileName, contentType: contentType) { saved in
+                    if saved {
+                        print("File saved locally for retry: \(fileName)")
+                    } else {
+                        print("Failed to save file for retry: \(fileName)")
+                    }
+
+                    let error = NSError(domain: "UploadError",
+                                        code: -1009,
+                                        userInfo: [NSLocalizedDescriptionKey: "Upload failed. No internet connection. File saved locally."])
+                    completion(.failure(error))
+                }
+
+                return
+            }
+        }
+
+        
         let expression = AWSS3TransferUtilityUploadExpression()
         let transferUtility = AWSS3TransferUtility.default()
         
@@ -74,6 +97,19 @@ final class S3Service {
         ) { task, error in
             if let error = error {
                 print("Upload error: \(error)")
+                
+                // Save file locally for retry if upload fails
+                self.saveFileForRetry(fileURL: fileURL, folderName: folderName, fileName: fileName, contentType: contentType) { saved in
+                    if saved {
+                        print("Upload failed, but file saved for retry")
+                    } else {
+                        print("Upload failed and file was NOT saved for retry")
+                    }
+                    completion(.failure(error))
+                }
+
+
+                
                 completion(.failure(error))
             } else {
                 print("Uploaded: \(fileName)")
@@ -160,5 +196,93 @@ final class S3Service {
             return nil
         }
     }
-}
+    
+    /// Checks if the device currently has an active internet connection
+    func checkInternetConnection(completion: @escaping (Bool) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
 
+        monitor.pathUpdateHandler = { path in
+            completion(path.status == .satisfied)
+            monitor.cancel() // Stop monitoring after first response
+        }
+
+        monitor.start(queue: queue)
+    }
+
+    
+    private func saveFileForRetry(fileURL: URL, folderName: String, fileName: String, contentType: String, completion: @escaping (Bool) -> Void) {
+        let fileManager = FileManager.default
+        let cacheDir = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let retryFolder = cacheDir.appendingPathComponent("PendingUploads", isDirectory: true)
+
+        do {
+            try fileManager.createDirectory(at: retryFolder, withIntermediateDirectories: true)
+
+            let destFileName = "\(folderName)__\(fileName)"
+            let destURL = retryFolder.appendingPathComponent(destFileName)
+
+            if fileManager.fileExists(atPath: destURL.path) {
+                try fileManager.removeItem(at: destURL)
+            }
+
+            try fileManager.copyItem(at: fileURL, to: destURL)
+            completion(true)
+        } catch {
+            print("Failed to save for retry: \(error)")
+            completion(false)
+        }
+    }
+    
+    /// Uploads any files that were saved locally
+    /// Called when the app starts
+    func retryPendingUploads() {
+        let fileManager = FileManager.default
+        let cacheDir = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let retryFolder = cacheDir.appendingPathComponent("PendingUploads", isDirectory: true)
+
+        guard let fileURLs = try? fileManager.contentsOfDirectory(at: retryFolder, includingPropertiesForKeys: nil) else {
+            print("Failed to read PendingUploads folder")
+            return
+        }
+
+        for fileURL in fileURLs {
+            let fileName = fileURL.lastPathComponent
+
+            // Očekujemo format: Images__image1.jpg ili Logs__something.txt
+            let components = fileName.split(separator: "__", maxSplits: 1).map(String.init)
+            guard components.count == 2 else {
+                print("Invalid filename format for retry: \(fileName)")
+                continue
+            }
+
+            let folderName = components[0]
+            let actualFileName = components[1]
+
+            // ContentType možeš hardkodovati na osnovu foldera
+            let contentType: String
+            if folderName == s3FolderImages {
+                contentType = "image/jpeg"
+            } else if folderName == s3FolderLogs {
+                contentType = "text/plain"
+            } else {
+                print("Unknown folder: \(folderName)")
+                continue
+            }
+
+            print("Retrying upload for: \(actualFileName)")
+
+            self.upload(fileURL: fileURL, folderName: folderName, fileName: actualFileName, contentType: contentType) { result in
+                switch result {
+                case .success:
+                    try? fileManager.removeItem(at: fileURL)
+                    print("Successfully retried and removed: \(actualFileName)")
+                case .failure(let error):
+                    print("Retry failed for \(actualFileName): \(error.localizedDescription)")
+                    break
+                }
+            }
+        }
+    }
+
+}

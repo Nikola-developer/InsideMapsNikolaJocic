@@ -32,6 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = window
         window.makeKeyAndVisible()
+        
+        
+        let s3Service = S3Service()
+        s3Service.retryPendingUploads()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

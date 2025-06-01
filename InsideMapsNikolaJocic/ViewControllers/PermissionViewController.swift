@@ -37,7 +37,7 @@ class PermissionViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Allow camera access", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
-        button.addTarget(PermissionViewController.self, action: #selector(requestCameraPermission), for: .touchUpInside)
+        button.addTarget(self, action: #selector(requestCameraPermission), for: .touchUpInside)
         return button
     }()
 
@@ -47,6 +47,7 @@ class PermissionViewController: UIViewController {
     }
 
     private func layoutUI() {
+        view.backgroundColor = .white
         view.addSubview(stackView)
 
         stackView.addArrangedSubview(logoImageView)

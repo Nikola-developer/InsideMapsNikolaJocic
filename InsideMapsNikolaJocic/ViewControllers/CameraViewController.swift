@@ -14,6 +14,8 @@ final class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
     
     private let cameraService = CameraService()
     private var capturedImages: [UIImage] = []
+    private var hasErrors = false
+    private var hasShownAlert = false
     
     private let captureButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -69,7 +71,7 @@ final class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
             captureButton.heightAnchor.constraint(equalToConstant: 70),
             
             // Gallery dugme skroz desno, sa razmakom 20
-            galleryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            galleryButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             galleryButton.centerYAnchor.constraint(equalTo: captureButton.centerYAnchor),
             galleryButton.widthAnchor.constraint(equalToConstant: 50),
             galleryButton.heightAnchor.constraint(equalToConstant: 50)
@@ -95,13 +97,13 @@ final class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
                      didFinishProcessingPhoto photo: AVCapturePhoto,
                      error: Error?) {
         if let error = error {
-            print("Error: \(error)")
+            self.showErrorAlert(error: "Error: \(error)")
             return
         }
         
         guard let data = photo.fileDataRepresentation(),
               let image = UIImage(data: data) else {
-            print("Can not convert image.")
+            self.showErrorAlert(error: "Can not convert image.")
             return
         }
         
@@ -124,6 +126,20 @@ final class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+    @objc private func showErrorAlert(error: String) {
+        DispatchQueue.main.async {
+            guard !self.hasShownAlert else { return }
+            self.hasShownAlert = true
+            self.hasErrors = true
+
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                self.dismiss(animated: true)
+                self.hasShownAlert = false
+            })
+
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
-
-
