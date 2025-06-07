@@ -4,7 +4,32 @@
 
 This iOS application was built using ****Swift**** and ****UIKit**** as part of a take-home assignment. The app captures bracketed photos using the camera, allows users to preview and upload them to ****AWS S3****, and displays uploaded images in a ****lazy-loaded gallery****.
   
----  
+--- 
+
+<table border="0" style="border: none;">
+  <tr>
+    <td valign="top" width="60%">
+
+### Contents
+
+- [Features](#features)  
+- [Architecture](#architecture)  
+- [Secrets & Configuration](#secrets--configuration)  
+- [Design Decisions](#design-decisions)  
+- [Offline functionality](#offline-functionality)  
+- [Future Improvements](#future-improvements)  
+- [App Screenshots](#app-screenshots)
+</br>
+This iOS application was built using **Swift** and **UIKit** 
+
+</td>
+    <td align="center" width="20%">
+      <img src="https://github.com/user-attachments/assets/3dfb7e82-463e-44d9-aee1-773a84d77b9d" width="80%" alt="App Preview">
+    </td>
+  </tr>
+</table>
+
+---
 
 ## Features
 
@@ -91,3 +116,28 @@ Added offline capability to `S3Service`.
 -   Show image upload progress
 -   Add gallery filtering or image metadata
 -   Offline-first caching strategy
+
+
+## App Screenshots
+
+<p align="center">
+  <img alt="Launch view" src="https://github.com/user-attachments/assets/3dfb7e82-463e-44d9-aee1-773a84d77b9d" width="20%" />
+  &nbsp;
+  <img alt="Permission view"  src="https://github.com/user-attachments/assets/1c306d77-c565-4c1a-8689-d69241cea54e" width="20%" />
+  &nbsp;
+  <img alt="Camera view"  src="https://github.com/user-attachments/assets/e3321caa-46c7-4168-89f1-1d0169a69107" width="20%" />
+  &nbsp;
+  <img alt="Image view"  src="https://github.com/user-attachments/assets/8c7eb883-d504-4907-a67b-d6a789927a22" width="20%" />
+</p>
+
+<p align="center">
+  <img alt="imagePreview_uploading view" src="https://github.com/user-attachments/assets/cb5e6134-a7f8-4208-8f7b-3f5194f76ec1" width="20%" />
+  &nbsp;
+  <img alt="gallery_while_loading_images view"  src="https://github.com/user-attachments/assets/4b052dd0-c154-496b-a5aa-dd2ad041b862" width="20%" />
+  &nbsp;
+  <img alt="gallery view"  src="https://github.com/user-attachments/assets/36081c3f-277d-4cff-8e97-052e7383dc14" width="20%" />
+  &nbsp;
+  <img alt="showing_error view"  src="https://github.com/user-attachments/assets/6b1f5c80-1c1b-4a60-a788-fbd7d2e05eaa" width="20%" />
+</p>
+
+---  
