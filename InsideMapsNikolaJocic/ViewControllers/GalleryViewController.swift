@@ -73,8 +73,15 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
             
             guard !urls.isEmpty else { return }
             
+            let startIndex = self.imageURLs.count
             self.imageURLs.append(contentsOf: urls)
-            self.collectionView.reloadData()
+//            self.collectionView.reloadData()
+            let endIndex = startIndex + urls.count
+            let indexPaths = (startIndex..<endIndex).map { IndexPath(item: $0, section: 0) }
+            
+            DispatchQueue.main.async {
+                self.collectionView.insertItems(at: indexPaths)
+            }
         }
     }
     
@@ -105,7 +112,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-        if indexPath.item >= imageURLs.count - 1 {
+        if indexPath.item >= imageURLs.count - 5 {
             fetchImages()
         }
     }

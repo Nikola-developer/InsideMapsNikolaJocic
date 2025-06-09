@@ -33,14 +33,21 @@ final class GalleryImageCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+        
     func configure(with url: URL) {
         currentURL = url
         
         // Load image from cache if availible
         if let cached = ImageCache.shared.image(for: url) {
-            imageView.image = cached
-            imageView.contentMode = .scaleAspectFill
+            DispatchQueue.main.async {
+                UIView.transition(with: self.imageView,
+                                  duration: 0.2,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                    self.imageView.image = cached
+                    self.imageView.contentMode = .scaleAspectFill
+                })
+            }
             return
         }
         
@@ -48,7 +55,8 @@ final class GalleryImageCell: UICollectionViewCell {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
             guard let self = self,
                   let data = data,
-                  let image = UIImage(data: data),
+//                  let image = UIImage(data: data),
+                  let image = self.decodedImage(data),
                   self.currentURL == url else { return }
             
             // Cache image
@@ -59,5 +67,14 @@ final class GalleryImageCell: UICollectionViewCell {
                 self.imageView.contentMode = .scaleAspectFill
             }
         }.resume()
+    }
+    
+    private func decodedImage(_ data: Data) -> UIImage? {
+        guard let image = UIImage(data: data) else { return nil }
+        UIGraphicsBeginImageContextWithOptions(image.size, true, image.scale)
+        image.draw(at: .zero)
+        let decompressedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return decompressedImage
     }
 }
