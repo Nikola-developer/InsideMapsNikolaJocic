@@ -90,11 +90,20 @@ class PermissionViewController: UIViewController {
             showPermissionDeniedAlert()
         }
     }
-
+    
     private func navigateToCamera() {
+        // Get the window from the current scene
+        guard
+            let windowScene = view.window?.windowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate
+        else { return }
+        
+        // Create the camera view controller wrapped in navigation controller
         let cameraVC = CameraViewController()
-        cameraVC.modalPresentationStyle = .fullScreen
-        present(cameraVC, animated: true)
+        let navVC = UINavigationController(rootViewController: cameraVC)
+        
+        // Set it as the root view controller
+        sceneDelegate.window?.rootViewController = navVC
     }
 
     private func showPermissionDeniedAlert() {
